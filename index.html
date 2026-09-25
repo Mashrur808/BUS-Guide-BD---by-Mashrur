@@ -1,0 +1,1993 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#006f72">
+
+<title>BUS Guide BD — by Mashrur</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+:root{
+  --primary:#00a6a6;
+  --primary2:#007578;
+  --dark:#06282b;
+  --gold:#f1c94a;
+  --bg:#f4f8f8;
+  --card:#fff;
+  --soft:#edf7f7;
+  --text:#10282b;
+  --muted:#718285;
+  --border:#dce9e9;
+  --shadow:0 18px 50px rgba(0,70,75,.09);
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+}
+
+button,input,select{font:inherit}
+
+button{cursor:pointer}
+
+/* NAV */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+.navin{
+  max-width:1400px;
+  margin:auto;
+  padding:13px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:1000;
+  color:var(--primary2);
+  letter-spacing:-.6px;
+}
+
+.logo span{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#b68b13;
+  margin-top:-2px;
+}
+
+.navlinks{
+  display:flex;
+  gap:22px;
+}
+
+.navlinks a{
+  text-decoration:none;
+  color:var(--text);
+  font-size:13px;
+  font-weight:800;
+}
+
+.navlinks a:hover{color:var(--primary)}
+
+/* HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+  radial-gradient(circle at 82% 15%,rgba(255,255,255,.15),transparent 26%),
+  radial-gradient(circle at 5% 100%,rgba(0,255,255,.09),transparent 30%),
+  linear-gradient(135deg,#00a9a9,#006f73 48%,#04282b);
+  color:white;
+  padding:75px 20px 80px;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:550px;
+  height:550px;
+  right:-220px;
+  bottom:-350px;
+  border:90px solid rgba(255,255,255,.035);
+  border-radius:50%;
+}
+
+.heroin{
+  position:relative;
+  z-index:2;
+  max-width:1400px;
+  margin:auto;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 14px;
+  border-radius:30px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  font-size:12px;
+  font-weight:900;
+}
+
+.hero h1{
+  font-size:clamp(42px,6vw,72px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin-top:20px;
+}
+
+.hero h1 span{color:#ffe078}
+
+.hero p{
+  max-width:750px;
+  margin-top:20px;
+  color:#d7ffff;
+  font-size:16px;
+}
+
+/* SEARCH */
+.searchbox{
+  margin-top:32px;
+  background:white;
+  border-radius:22px;
+  padding:12px;
+  box-shadow:0 25px 70px rgba(0,0,0,.25);
+  display:grid;
+  grid-template-columns:1fr 52px 1fr 1.5fr 130px;
+  gap:9px;
+}
+
+.searchbox select,
+.searchbox input{
+  border:1px solid var(--border);
+  outline:0;
+  background:#fff;
+  color:var(--text);
+  border-radius:13px;
+  padding:15px;
+  min-width:0;
+}
+
+.searchbox select:focus,
+.searchbox input:focus{
+  border-color:var(--primary);
+}
+
+.swap{
+  border:0;
+  background:var(--soft);
+  color:var(--primary2);
+  border-radius:13px;
+  font-size:22px;
+  font-weight:900;
+}
+
+.search{
+  border:0;
+  border-radius:13px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:1000;
+}
+
+.search:hover{background:var(--primary2)}
+
+/* STATS */
+.stats{
+  max-width:1400px;
+  padding:0 20px;
+  margin:-35px auto 0;
+  position:relative;
+  z-index:5;
+}
+
+.statsin{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.stat{
+  padding:23px 12px;
+  text-align:center;
+  border-right:1px solid var(--border);
+}
+
+.stat:last-child{border:0}
+
+.stat strong{
+  display:block;
+  font-size:26px;
+  color:var(--primary2);
+}
+
+.stat small{
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* COMMON */
+.section{
+  max-width:1400px;
+  margin:auto;
+  padding:65px 20px 0;
+}
+
+.heading{
+  margin-bottom:22px;
+}
+
+.heading h2{
+  font-size:32px;
+  letter-spacing:-1px;
+}
+
+.heading p{
+  color:var(--muted);
+  margin-top:5px;
+}
+
+.pillrow{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.pill{
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--text);
+  padding:9px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.pill.active{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+}
+
+/* ROUTES */
+.routegrid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+
+.route{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:17px;
+  padding:17px;
+  text-align:left;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+
+.route:hover{
+  transform:translateY(-4px);
+  border-color:var(--primary);
+}
+
+.route .icon{
+  font-size:22px;
+}
+
+.route b{
+  display:block;
+  margin-top:9px;
+  font-size:14px;
+}
+
+.route small{
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* BUS DIRECTORY */
+.directorybar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+
+.count{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+}
+
+.busgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.bus{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:20px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+
+.bus:hover{
+  transform:translateY(-4px);
+}
+
+.bushead{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.busname{
+  font-size:19px;
+  font-weight:1000;
+  color:#123236;
+}
+
+.verified{
+  display:inline-block;
+  margin-left:5px;
+  color:#00a2a2;
+  font-size:13px;
+}
+
+.routeText{
+  color:var(--primary2);
+  font-size:13px;
+  font-weight:900;
+  margin-top:3px;
+}
+
+.tags{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin:13px 0;
+}
+
+.tag{
+  padding:5px 8px;
+  border-radius:7px;
+  background:var(--soft);
+  color:var(--primary2);
+  font-size:10px;
+  font-weight:900;
+}
+
+.tag.gold{
+  background:#fff4ca;
+  color:#846300;
+}
+
+.tag.gray{
+  background:#f0f3f3;
+  color:#687678;
+}
+
+.info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+}
+
+.infobox{
+  background:#f6f9f9;
+  border-radius:10px;
+  padding:9px;
+}
+
+.infobox small{
+  display:block;
+  color:var(--muted);
+  font-size:9px;
+}
+
+.infobox b{
+  font-size:11px;
+}
+
+.actions{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:5px;
+  margin-top:13px;
+}
+
+.actions a{
+  text-decoration:none;
+  text-align:center;
+  padding:9px 3px;
+  border-radius:8px;
+  background:var(--soft);
+  color:var(--primary2);
+  font-size:10px;
+  font-weight:1000;
+}
+
+.actions a:hover{
+  background:var(--primary);
+  color:white;
+}
+
+/* DESTINATIONS */
+.destinationgrid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:10px;
+}
+
+.destination{
+  background:#fff;
+  border:1px solid var(--border);
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  font-weight:900;
+  font-size:12px;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+}
+
+.destination:hover{
+  border-color:var(--primary);
+  color:var(--primary2);
+}
+
+/* MAP */
+.mapsection{
+  background:linear-gradient(135deg,#06282b,#073d40);
+  color:white;
+  border-radius:28px;
+  padding:32px;
+  overflow:hidden;
+  position:relative;
+}
+
+.mapsection:after{
+  content:"";
+  position:absolute;
+  right:-100px;
+  top:-150px;
+  width:400px;
+  height:400px;
+  border:70px solid rgba(255,255,255,.03);
+  border-radius:50%;
+}
+
+.mapsection h2{
+  position:relative;
+  z-index:2;
+  font-size:30px;
+}
+
+.mapsection p{
+  position:relative;
+  z-index:2;
+  color:#b9d8d9;
+  margin-top:5px;
+}
+
+.mapgrid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-top:22px;
+}
+
+.maplink{
+  text-decoration:none;
+  background:rgba(255,255,255,.96);
+  color:var(--primary2);
+  padding:12px 9px;
+  border-radius:10px;
+  text-align:center;
+  font-size:11px;
+  font-weight:1000;
+}
+
+.maplink:hover{
+  background:#dfffff;
+}
+
+/* OPERATORS */
+.opgrid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+
+.op{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.op h3{
+  font-size:15px;
+}
+
+.op p{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.op a{
+  display:inline-block;
+  margin-top:12px;
+  text-decoration:none;
+  color:var(--primary2);
+  font-size:11px;
+  font-weight:1000;
+}
+
+/* NOTICE */
+.notice{
+  background:#fff;
+  border:1px solid var(--border);
+  border-left:5px solid var(--gold);
+  border-radius:15px;
+  padding:18px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+
+/* FOOTER */
+footer{
+  margin-top:75px;
+  background:#04191b;
+  color:#91aaac;
+  padding:48px 20px;
+  text-align:center;
+}
+
+footer h2{
+  color:white;
+  font-size:23px;
+}
+
+footer strong{
+  color:#f1c94a;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+footer p{
+  margin-top:12px;
+  font-size:11px;
+}
+
+/* MOBILE */
+@media(max-width:1100px){
+  .routegrid{grid-template-columns:repeat(4,1fr)}
+  .busgrid{grid-template-columns:repeat(2,1fr)}
+  .opgrid{grid-template-columns:repeat(4,1fr)}
+  .destinationgrid{grid-template-columns:repeat(4,1fr)}
+}
+
+@media(max-width:800px){
+  .navlinks{display:none}
+
+  .searchbox{
+    grid-template-columns:1fr 50px 1fr;
+  }
+
+  .searchbox input{grid-column:1/-1}
+  .search{grid-column:1/-1;padding:14px}
+
+  .statsin{grid-template-columns:repeat(3,1fr)}
+  .stat:nth-child(3){border-right:0}
+
+  .routegrid{grid-template-columns:repeat(2,1fr)}
+  .busgrid{grid-template-columns:1fr}
+  .opgrid{grid-template-columns:repeat(2,1fr)}
+  .destinationgrid{grid-template-columns:repeat(3,1fr)}
+  .mapgrid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:520px){
+  .hero{padding:55px 15px 70px}
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .searchbox{
+    grid-template-columns:1fr 48px 1fr;
+    padding:9px;
+  }
+
+  .stats{padding:0 12px}
+
+  .statsin{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .stat:nth-child(2),
+  .stat:nth-child(4){
+    border-right:0;
+  }
+
+  .section{
+    padding-left:13px;
+    padding-right:13px;
+  }
+
+  .routegrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .opgrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .destinationgrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .mapgrid{
+    grid-template-columns:1fr;
+  }
+
+  .actions{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="navin">
+
+    <div class="logo">
+      BUS Guide BD
+      <span>BY — MASRUR</span>
+    </div>
+
+    <div class="navlinks">
+      <a href="#routes">Routes</a>
+      <a href="#buses">Buses</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#operators">Operators</a>
+      <a href="#maps">Maps</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+
+<div class="heroin">
+
+  <div class="badge">
+    🇧🇩 BANGLADESH'S BUS GUIDE
+  </div>
+
+  <h1>
+    Travel Bangladesh<br>
+    <span>Bus by Bus.</span>
+  </h1>
+
+  <p>
+    Bus routes, operators, classes, ticket links,
+    contact options and Google Maps directions —
+    সব এক জায়গায়।
+  </p>
+
+  <div class="searchbox">
+
+    <select id="from">
+      <option value="">From</option>
+    </select>
+
+    <button class="swap" onclick="swapRoute()">⇄</button>
+
+    <select id="to">
+      <option value="">To</option>
+    </select>
+
+    <input
+      id="search"
+      placeholder="🔎 Search bus, operator or city..."
+    >
+
+    <button class="search" onclick="searchBuses()">
+      SEARCH
+    </button>
+
+  </div>
+
+</div>
+
+</header>
+
+
+<!-- STATS -->
+<section class="stats">
+
+<div class="statsin">
+
+  <div class="stat">
+    <strong id="busCount">0+</strong>
+    <small>Bus Entries</small>
+  </div>
+
+  <div class="stat">
+    <strong id="routeCount">0+</strong>
+    <small>Direction Routes</small>
+  </div>
+
+  <div class="stat">
+    <strong id="opCount">0+</strong>
+    <small>Operators</small>
+  </div>
+
+  <div class="stat">
+    <strong>🗺️</strong>
+    <small>Google Directions</small>
+  </div>
+
+  <div class="stat">
+    <strong>📱</strong>
+    <small>Mobile Friendly</small>
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- POPULAR ROUTES -->
+<section class="section" id="routes">
+
+<div class="heading">
+  <h2>🔥 Popular Routes</h2>
+  <p>যে route দরকার, এক ক্লিকেই filter করো।</p>
+</div>
+
+<div class="routegrid" id="routeGrid"></div>
+
+</section>
+
+
+<!-- BUS DIRECTORY -->
+<section class="section" id="buses">
+
+<div class="heading">
+  <h2>🚍 Bus Directory</h2>
+  <p>Route অনুযায়ী available/listed services খুঁজে নাও।</p>
+</div>
+
+<div class="directorybar">
+
+  <div class="count" id="result">
+    Loading buses...
+  </div>
+
+  <div class="pillrow">
+
+    <button class="pill active" onclick="filterType('all',this)">
+      ALL
+    </button>
+
+    <button class="pill" onclick="filterType('AC',this)">
+      ❄️ AC
+    </button>
+
+    <button class="pill" onclick="filterType('Non-AC',this)">
+      🚌 NON-AC
+    </button>
+
+    <button class="pill" onclick="filterType('Business',this)">
+      💼 BUSINESS
+    </button>
+
+    <button class="pill" onclick="filterType('Economy',this)">
+      💺 ECONOMY
+    </button>
+
+    <button class="pill" onclick="filterType('Sleeper',this)">
+      🛏️ SLEEPER
+    </button>
+
+  </div>
+
+</div>
+
+<div class="busgrid" id="busGrid"></div>
+
+</section>
+
+
+<!-- DESTINATIONS -->
+<section class="section" id="destinations">
+
+<div class="heading">
+  <h2>📍 Explore Destinations</h2>
+  <p>একটা city select করলে সেটার bus services দেখতে পারবে।</p>
+</div>
+
+<div class="destinationgrid" id="destinationGrid"></div>
+
+</section>
+
+
+<!-- MAPS -->
+<section class="section" id="maps">
+
+<div class="mapsection">
+
+  <h2>🗺️ Google Maps Route Explorer</h2>
+
+  <p>
+    নিচের route-এ click করলে সরাসরি Google Maps-এর
+    driving directions খুলবে।
+  </p>
+
+  <div class="mapgrid" id="mapGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- OPERATORS -->
+<section class="section" id="operators">
+
+<div class="heading">
+  <h2>🏢 Bus Operators</h2>
+  <p>BUS Guide BD database-এর operators।</p>
+</div>
+
+<div class="opgrid" id="opGrid"></div>
+
+</section>
+
+
+<!-- NOTICE -->
+<section class="section">
+
+<div class="notice">
+
+<b>ℹ️ Information Notice</b><br>
+
+Bus schedules, fares, counters and availability
+পরিবর্তন হতে পারে। যেখানে current departure/fare
+নিশ্চিতভাবে পাওয়া যায়নি সেখানে ইচ্ছা করে fake তথ্য
+দেওয়া হয়নি। যাত্রার আগে operator/counter বা ticket
+platform-এ current information confirm করো।
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<h2>BUS Guide BD</h2>
+
+<strong>BY — MASRUR</strong>
+
+<p>
+Routes • Bus Operators • Tickets • Google Maps
+</p>
+
+<p>
+© 2026 BUS Guide BD
+</p>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   BUS DATABASE
+   ========================================================= */
+
+const buses = [
+
+/* ---------- DHAKA ↔ CHATTOGRAM ---------- */
+
+["Green Line","Dhaka","Chattogram","AC","Business"],
+["Green Line","Chattogram","Dhaka","AC","Business"],
+
+["Hanif Enterprise","Dhaka","Chattogram","AC","Economy"],
+["Hanif Enterprise","Chattogram","Dhaka","AC","Economy"],
+
+["Shohagh Paribahan","Dhaka","Chattogram","AC","Business"],
+["Shohagh Paribahan","Chattogram","Dhaka","AC","Business"],
+
+["Shyamoli Paribahan","Dhaka","Chattogram","AC","Business"],
+["Shyamoli Paribahan","Chattogram","Dhaka","AC","Business"],
+
+["S Alam Paribahan","Dhaka","Chattogram","Non-AC","Economy"],
+["S Alam Paribahan","Chattogram","Dhaka","Non-AC","Economy"],
+
+["Soudia Coach","Dhaka","Chattogram","AC","Economy"],
+["Soudia Coach","Chattogram","Dhaka","AC","Economy"],
+
+["Marsa Transport","Dhaka","Chattogram","Non-AC","Economy"],
+["Marsa Transport","Chattogram","Dhaka","Non-AC","Economy"],
+
+["Shadhin Travels","Dhaka","Chattogram","AC","Business"],
+["Shadhin Travels","Chattogram","Dhaka","AC","Business"],
+
+["Saintmartin Travels","Dhaka","Chattogram","AC","Business"],
+["Saintmartin Travels","Chattogram","Dhaka","AC","Business"],
+
+["Desh Travels","Dhaka","Chattogram","AC","Business"],
+["Desh Travels","Chattogram","Dhaka","AC","Business"],
+
+["London Express","Dhaka","Chattogram","AC","Business"],
+["London Express","Chattogram","Dhaka","AC","Business"],
+
+["Royal Coach","Dhaka","Chattogram","AC","Business"],
+["Royal Coach","Chattogram","Dhaka","AC","Business"],
+
+["Ena Transport","Dhaka","Chattogram","AC","Economy"],
+["Ena Transport","Chattogram","Dhaka","AC","Economy"],
+
+
+/* ---------- DHAKA ↔ COX'S BAZAR ---------- */
+
+["Green Line","Dhaka","Cox's Bazar","AC","Business"],
+["Green Line","Cox's Bazar","Dhaka","AC","Business"],
+
+["Hanif Enterprise","Dhaka","Cox's Bazar","AC","Economy"],
+["Hanif Enterprise","Cox's Bazar","Dhaka","AC","Economy"],
+
+["Shyamoli Paribahan","Dhaka","Cox's Bazar","AC","Business"],
+["Shyamoli Paribahan","Cox's Bazar","Dhaka","AC","Business"],
+
+["S Alam Paribahan","Dhaka","Cox's Bazar","Non-AC","Economy"],
+["S Alam Paribahan","Cox's Bazar","Dhaka","Non-AC","Economy"],
+
+["Soudia Coach","Dhaka","Cox's Bazar","AC","Economy"],
+["Soudia Coach","Cox's Bazar","Dhaka","AC","Economy"],
+
+["Marsa Transport","Dhaka","Cox's Bazar","Non-AC","Economy"],
+["Marsa Transport","Cox's Bazar","Dhaka","Non-AC","Economy"],
+
+["Shadhin Travels","Dhaka","Cox's Bazar","AC","Business"],
+["Shadhin Travels","Cox's Bazar","Dhaka","AC","Business"],
+
+["Saintmartin Travels","Dhaka","Cox's Bazar","AC","Business"],
+["Saintmartin Travels","Cox's Bazar","Dhaka","AC","Business"],
+
+["Relax Transport","Dhaka","Cox's Bazar","AC","Business"],
+["Relax Transport","Cox's Bazar","Dhaka","AC","Business"],
+
+["Desh Travels","Dhaka","Cox's Bazar","AC","Business"],
+["Desh Travels","Cox's Bazar","Dhaka","AC","Business"],
+
+
+/* ---------- CHATTOGRAM ↔ COX'S BAZAR ---------- */
+
+["Marsa Transport","Chattogram","Cox's Bazar","Non-AC","Economy"],
+["Marsa Transport","Cox's Bazar","Chattogram","Non-AC","Economy"],
+
+["Soudia Coach","Chattogram","Cox's Bazar","Non-AC","Economy"],
+["Soudia Coach","Cox's Bazar","Chattogram","Non-AC","Economy"],
+
+["S Alam Paribahan","Chattogram","Cox's Bazar","Non-AC","Economy"],
+["S Alam Paribahan","Cox's Bazar","Chattogram","Non-AC","Economy"],
+
+["Green Line","Chattogram","Cox's Bazar","AC","Business"],
+["Green Line","Cox's Bazar","Chattogram","AC","Business"],
+
+["Shadhin Travels","Chattogram","Cox's Bazar","AC","Business"],
+["Shadhin Travels","Cox's Bazar","Chattogram","AC","Business"],
+
+["Saintmartin Travels","Chattogram","Cox's Bazar","AC","Business"],
+["Saintmartin Travels","Cox's Bazar","Chattogram","AC","Business"],
+
+["Relax Transport","Chattogram","Cox's Bazar","AC","Business"],
+["Relax Transport","Cox's Bazar","Chattogram","AC","Business"],
+
+
+/* ---------- DHAKA ↔ KHULNA ---------- */
+
+["Shohagh Paribahan","Dhaka","Khulna","AC","Business"],
+["Shohagh Paribahan","Khulna","Dhaka","AC","Business"],
+
+["Soudia Coach","Dhaka","Khulna","Non-AC","Economy"],
+["Soudia Coach","Khulna","Dhaka","Non-AC","Economy"],
+
+["Hanif Enterprise","Dhaka","Khulna","AC","Economy"],
+["Hanif Enterprise","Khulna","Dhaka","AC","Economy"],
+
+["Shyamoli Paribahan","Dhaka","Khulna","AC","Business"],
+["Shyamoli Paribahan","Khulna","Dhaka","AC","Business"],
+
+["Saintmartin Travels","Dhaka","Khulna","AC","Business"],
+["Saintmartin Travels","Khulna","Dhaka","AC","Business"],
+
+["Tungipara Express","Dhaka","Khulna","Non-AC","Economy"],
+["Tungipara Express","Khulna","Dhaka","Non-AC","Economy"],
+
+["Emad Paribahan","Dhaka","Khulna","Non-AC","Economy"],
+["Emad Paribahan","Khulna","Dhaka","Non-AC","Economy"],
+
+["Kanak Paribahan","Dhaka","Khulna","Non-AC","Economy"],
+["Kanak Paribahan","Khulna","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ SYLHET ---------- */
+
+["Green Line","Dhaka","Sylhet","AC","Business"],
+["Green Line","Sylhet","Dhaka","AC","Business"],
+
+["Ena Transport","Dhaka","Sylhet","AC","Business"],
+["Ena Transport","Sylhet","Dhaka","AC","Business"],
+
+["Shyamoli Paribahan","Dhaka","Sylhet","AC","Business"],
+["Shyamoli Paribahan","Sylhet","Dhaka","AC","Business"],
+
+["Hanif Enterprise","Dhaka","Sylhet","AC","Economy"],
+["Hanif Enterprise","Sylhet","Dhaka","AC","Economy"],
+
+
+/* ---------- CHATTOGRAM ↔ SYLHET ---------- */
+
+["Shyamoli Paribahan","Chattogram","Sylhet","Non-AC","Economy"],
+["Shyamoli Paribahan","Sylhet","Chattogram","Non-AC","Economy"],
+
+["Green Line","Chattogram","Sylhet","AC","Business"],
+["Green Line","Sylhet","Chattogram","AC","Business"],
+
+
+/* ---------- DHAKA ↔ RAJSHAHI ---------- */
+
+["National Travels","Dhaka","Rajshahi","AC","Economy"],
+["National Travels","Rajshahi","Dhaka","AC","Economy"],
+
+["Silk Line","Dhaka","Rajshahi","AC","Business"],
+["Silk Line","Rajshahi","Dhaka","AC","Business"],
+
+["Hanif Enterprise","Dhaka","Rajshahi","AC","Economy"],
+["Hanif Enterprise","Rajshahi","Dhaka","AC","Economy"],
+
+["Shyamoli Paribahan","Dhaka","Rajshahi","AC","Business"],
+["Shyamoli Paribahan","Rajshahi","Dhaka","AC","Business"],
+
+
+/* ---------- DHAKA ↔ RANGPUR ---------- */
+
+["Ena Transport","Dhaka","Rangpur","AC","Business"],
+["Ena Transport","Rangpur","Dhaka","AC","Business"],
+
+["Shyamoli Paribahan","Dhaka","Rangpur","AC","Business"],
+["Shyamoli Paribahan","Rangpur","Dhaka","AC","Business"],
+
+["Hanif Enterprise","Dhaka","Rangpur","Non-AC","Economy"],
+["Hanif Enterprise","Rangpur","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ BOGURA ---------- */
+
+["Shyamoli Paribahan","Dhaka","Bogura","AC","Business"],
+["Shyamoli Paribahan","Bogura","Dhaka","AC","Business"],
+
+["Hanif Enterprise","Dhaka","Bogura","Non-AC","Economy"],
+["Hanif Enterprise","Bogura","Dhaka","Non-AC","Economy"],
+
+["Ena Transport","Dhaka","Bogura","AC","Economy"],
+["Ena Transport","Bogura","Dhaka","AC","Economy"],
+
+
+/* ---------- DHAKA ↔ BARISHAL ---------- */
+
+["Liton Travels","Dhaka","Barishal","AC","Economy"],
+["Liton Travels","Barishal","Dhaka","AC","Economy"],
+
+["Hanif Enterprise","Dhaka","Barishal","Non-AC","Economy"],
+["Hanif Enterprise","Barishal","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ MYMENSINGH ---------- */
+
+["Ena Transport","Dhaka","Mymensingh","AC","Economy"],
+["Ena Transport","Mymensingh","Dhaka","AC","Economy"],
+
+["Alhamra Paribahan","Dhaka","Mymensingh","Non-AC","Economy"],
+["Alhamra Paribahan","Mymensingh","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ CUMILLA ---------- */
+
+["Hanif Enterprise","Dhaka","Cumilla","Non-AC","Economy"],
+["Hanif Enterprise","Cumilla","Dhaka","Non-AC","Economy"],
+
+["Shyamoli Paribahan","Dhaka","Cumilla","AC","Economy"],
+["Shyamoli Paribahan","Cumilla","Dhaka","AC","Economy"],
+
+["S Alam Paribahan","Dhaka","Cumilla","Non-AC","Economy"],
+["S Alam Paribahan","Cumilla","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ FENI ---------- */
+
+["Shyamoli Paribahan","Dhaka","Feni","Non-AC","Economy"],
+["Shyamoli Paribahan","Feni","Dhaka","Non-AC","Economy"],
+
+["S Alam Paribahan","Dhaka","Feni","Non-AC","Economy"],
+["S Alam Paribahan","Feni","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ NOAKHALI ---------- */
+
+["Econo Service","Dhaka","Noakhali","Non-AC","Economy"],
+["Econo Service","Noakhali","Dhaka","Non-AC","Economy"],
+
+["Moonline Enterprise","Dhaka","Noakhali","Non-AC","Economy"],
+["Moonline Enterprise","Noakhali","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ JESSORE ---------- */
+
+["Shohagh Paribahan","Dhaka","Jashore","AC","Business"],
+["Shohagh Paribahan","Jashore","Dhaka","AC","Business"],
+
+["Hanif Enterprise","Dhaka","Jashore","AC","Economy"],
+["Hanif Enterprise","Jashore","Dhaka","AC","Economy"],
+
+["Soudia Coach","Dhaka","Jashore","Non-AC","Economy"],
+["Soudia Coach","Jashore","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ SATKHIRA ---------- */
+
+["Sundarban Express","Dhaka","Satkhira","Non-AC","Economy"],
+["Sundarban Express","Satkhira","Dhaka","Non-AC","Economy"],
+
+["Soudia Coach","Dhaka","Satkhira","Non-AC","Economy"],
+["Soudia Coach","Satkhira","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ KUSHTIA ---------- */
+
+["Shyamoli Paribahan","Dhaka","Kushtia","AC","Economy"],
+["Shyamoli Paribahan","Kushtia","Dhaka","AC","Economy"],
+
+["Hanif Enterprise","Dhaka","Kushtia","Non-AC","Economy"],
+["Hanif Enterprise","Kushtia","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ FARIDPUR ---------- */
+
+["Golden Line","Dhaka","Faridpur","AC","Economy"],
+["Golden Line","Faridpur","Dhaka","AC","Economy"],
+
+["Hanif Enterprise","Dhaka","Faridpur","Non-AC","Economy"],
+["Hanif Enterprise","Faridpur","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ GOPALGANJ ---------- */
+
+["Golden Line","Dhaka","Gopalganj","AC","Economy"],
+["Golden Line","Gopalganj","Dhaka","AC","Economy"],
+
+["Emad Paribahan","Dhaka","Gopalganj","Non-AC","Economy"],
+["Emad Paribahan","Gopalganj","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- CHATTOGRAM ↔ BANDARBAN ---------- */
+
+["Purbani Express","Chattogram","Bandarban","Non-AC","Economy"],
+["Purbani Express","Bandarban","Chattogram","Non-AC","Economy"],
+
+["Pubali","Chattogram","Bandarban","Non-AC","Economy"],
+["Pubali","Bandarban","Chattogram","Non-AC","Economy"],
+
+["S Alam Paribahan","Chattogram","Bandarban","Non-AC","Economy"],
+["S Alam Paribahan","Bandarban","Chattogram","Non-AC","Economy"],
+
+
+/* ---------- CHATTOGRAM ↔ RANGAMATI ---------- */
+
+["S Alam Paribahan","Chattogram","Rangamati","Non-AC","Economy"],
+["S Alam Paribahan","Rangamati","Chattogram","Non-AC","Economy"],
+
+["Purbani Express","Chattogram","Rangamati","Non-AC","Economy"],
+["Purbani Express","Rangamati","Chattogram","Non-AC","Economy"],
+
+["Paharika Super Service","Chattogram","Rangamati","Non-AC","Economy"],
+["Paharika Super Service","Rangamati","Chattogram","Non-AC","Economy"],
+
+
+/* ---------- CHATTOGRAM ↔ KHAGRACHHARI ---------- */
+
+["Shanti Paribahan","Chattogram","Khagrachhari","Non-AC","Economy"],
+["Shanti Paribahan","Khagrachhari","Chattogram","Non-AC","Economy"],
+
+["S Alam Paribahan","Chattogram","Khagrachhari","Non-AC","Economy"],
+["S Alam Paribahan","Khagrachhari","Chattogram","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ HILL DISTRICTS ---------- */
+
+["Shyamoli Paribahan","Dhaka","Bandarban","Non-AC","Economy"],
+["Shyamoli Paribahan","Bandarban","Dhaka","Non-AC","Economy"],
+
+["S Alam Paribahan","Dhaka","Bandarban","Non-AC","Economy"],
+["S Alam Paribahan","Bandarban","Dhaka","Non-AC","Economy"],
+
+["Relax Transport","Dhaka","Bandarban","AC","Business"],
+["Relax Transport","Bandarban","Dhaka","AC","Business"],
+
+["Relax Transport","Dhaka","Rangamati","AC","Business"],
+["Relax Transport","Rangamati","Dhaka","AC","Business"],
+
+["Relax Transport","Dhaka","Khagrachhari","AC","Business"],
+["Relax Transport","Khagrachhari","Dhaka","AC","Business"],
+
+
+/* ---------- HILL ↔ COX'S BAZAR ---------- */
+
+["Purbani Express","Bandarban","Cox's Bazar","Non-AC","Economy"],
+["Purbani Express","Cox's Bazar","Bandarban","Non-AC","Economy"],
+
+["Purabi","Bandarban","Cox's Bazar","Non-AC","Economy"],
+["Purabi","Cox's Bazar","Bandarban","Non-AC","Economy"],
+
+["Relax Transport","Rangamati","Cox's Bazar","AC","Business"],
+["Relax Transport","Cox's Bazar","Rangamati","AC","Business"],
+
+["Relax Transport","Khagrachhari","Cox's Bazar","AC","Business"],
+["Relax Transport","Cox's Bazar","Khagrachhari","AC","Business"],
+
+
+/* ---------- DHAKA ↔ TEKNAF ---------- */
+
+["Green Line","Dhaka","Teknaf","AC","Business"],
+["Green Line","Teknaf","Dhaka","AC","Business"],
+
+["Shyamoli Paribahan","Dhaka","Teknaf","AC","Business"],
+["Shyamoli Paribahan","Teknaf","Dhaka","AC","Business"],
+
+
+/* ---------- DHAKA ↔ PIREJPUR ---------- */
+
+["Hanif Enterprise","Dhaka","Pirojpur","Non-AC","Economy"],
+["Hanif Enterprise","Pirojpur","Dhaka","Non-AC","Economy"],
+
+["Eagle Paribahan","Dhaka","Pirojpur","Non-AC","Economy"],
+["Eagle Paribahan","Pirojpur","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ PATUAKHALI ---------- */
+
+["Hanif Enterprise","Dhaka","Patuakhali","Non-AC","Economy"],
+["Hanif Enterprise","Patuakhali","Dhaka","Non-AC","Economy"],
+
+["Eagle Paribahan","Dhaka","Patuakhali","Non-AC","Economy"],
+["Eagle Paribahan","Patuakhali","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ JHALOKATHI ---------- */
+
+["Eagle Paribahan","Dhaka","Jhalokathi","Non-AC","Economy"],
+["Eagle Paribahan","Jhalokathi","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ BARGUNA ---------- */
+
+["Eagle Paribahan","Dhaka","Barguna","Non-AC","Economy"],
+["Eagle Paribahan","Barguna","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ BHOLA ---------- */
+
+["Eagle Paribahan","Dhaka","Bhola","Non-AC","Economy"],
+["Eagle Paribahan","Bhola","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ NARAIL ---------- */
+
+["Hanif Enterprise","Dhaka","Narail","Non-AC","Economy"],
+["Hanif Enterprise","Narail","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ MAGURA ---------- */
+
+["Hanif Enterprise","Dhaka","Magura","Non-AC","Economy"],
+["Hanif Enterprise","Magura","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ JHENAIDAH ---------- */
+
+["Hanif Enterprise","Dhaka","Jhenaidah","Non-AC","Economy"],
+["Hanif Enterprise","Jhenaidah","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ CHUADANGA ---------- */
+
+["Hanif Enterprise","Dhaka","Chuadanga","Non-AC","Economy"],
+["Hanif Enterprise","Chuadanga","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ MEHERPUR ---------- */
+
+["Hanif Enterprise","Dhaka","Meherpur","Non-AC","Economy"],
+["Hanif Enterprise","Meherpur","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ BAGERHAT ---------- */
+
+["Hanif Enterprise","Dhaka","Bagerhat","Non-AC","Economy"],
+["Hanif Enterprise","Bagerhat","Dhaka","Non-AC","Economy"],
+
+
+/* ---------- DHAKA ↔ MADARIPUR ---------- */
+
+["Hanif Enterprise","Dhaka","Madaripur","Non-AC","Economy"],
+["Hanif Enterprise","Madaripur","Dhaka","Non-AC","Economy"]
+
+];
+
+
+/* =========================================================
+   OPERATOR LINKS
+   ========================================================= */
+
+const websites={
+
+"Green Line":"https://greenlinebd.com/",
+"Hanif Enterprise":"https://www.hanifenterprisebd.com/",
+"Shohagh Paribahan":"https://shohagh.com/",
+"Shyamoli Paribahan":"https://shyamolitickets.com/",
+"Marsa Transport":"https://www.marsatransport.com/",
+"Relax Transport":"https://relaxtransport.com/"
+
+};
+
+
+/* =========================================================
+   CITIES
+   ========================================================= */
+
+const cities=[
+
+"Dhaka",
+"Chattogram",
+"Cox's Bazar",
+"Khulna",
+"Sylhet",
+"Rajshahi",
+"Rangpur",
+"Bogura",
+"Barishal",
+"Mymensingh",
+"Cumilla",
+"Feni",
+"Noakhali",
+"Jashore",
+"Satkhira",
+"Kushtia",
+"Faridpur",
+"Gopalganj",
+"Bandarban",
+"Rangamati",
+"Khagrachhari",
+"Teknaf",
+"Pirojpur",
+"Patuakhali",
+"Jhalokathi",
+"Barguna",
+"Bhola",
+"Narail",
+"Magura",
+"Jhenaidah",
+"Chuadanga",
+"Meherpur",
+"Bagerhat",
+"Madaripur"
+
+];
+
+
+/* =========================================================
+   POPULAR ROUTES
+   ========================================================= */
+
+const popular=[
+
+["Dhaka","Chattogram"],
+["Chattogram","Dhaka"],
+
+["Dhaka","Cox's Bazar"],
+["Cox's Bazar","Dhaka"],
+
+["Chattogram","Cox's Bazar"],
+["Cox's Bazar","Chattogram"],
+
+["Dhaka","Khulna"],
+["Khulna","Dhaka"],
+
+["Dhaka","Sylhet"],
+["Sylhet","Dhaka"],
+
+["Dhaka","Rajshahi"],
+["Rajshahi","Dhaka"],
+
+["Dhaka","Rangpur"],
+["Rangpur","Dhaka"],
+
+["Dhaka","Barishal"],
+["Barishal","Dhaka"],
+
+["Dhaka","Bandarban"],
+["Bandarban","Dhaka"],
+
+["Dhaka","Rangamati"],
+["Rangamati","Dhaka"],
+
+["Dhaka","Khagrachhari"],
+["Khagrachhari","Dhaka"],
+
+["Chattogram","Bandarban"],
+["Bandarban","Chattogram"],
+
+["Chattogram","Rangamati"],
+["Rangamati","Chattogram"],
+
+["Chattogram","Khagrachhari"],
+["Khagrachhari","Chattogram"],
+
+["Bandarban","Cox's Bazar"],
+["Cox's Bazar","Bandarban"],
+
+["Rangamati","Cox's Bazar"],
+["Cox's Bazar","Rangamati"],
+
+["Khagrachhari","Cox's Bazar"],
+["Cox's Bazar","Khagrachhari"],
+
+["Dhaka","Jashore"],
+["Jashore","Dhaka"],
+
+["Dhaka","Barishal"],
+["Barishal","Dhaka"],
+
+["Dhaka","Patuakhali"],
+["Patuakhali","Dhaka"]
+
+];
+
+
+/* =========================================================
+   STATE
+   ========================================================= */
+
+let activeFilter="all";
+
+
+/* =========================================================
+   GOOGLE MAPS
+   ========================================================= */
+
+function mapURL(from,to){
+
+  return (
+    "https://www.google.com/maps/dir/?api=1"
+    +"&origin="+encodeURIComponent(from+", Bangladesh")
+    +"&destination="+encodeURIComponent(to+", Bangladesh")
+    +"&travelmode=driving"
+  );
+
+}
+
+
+/* =========================================================
+   TICKET / FB
+   ========================================================= */
+
+function ticketURL(){
+
+  return "https://www.shohoz.com/";
+
+}
+
+
+function facebookURL(name){
+
+  return "https://www.facebook.com/search/pages/?q="
+  +encodeURIComponent(name+" Bangladesh");
+
+}
+
+
+/* =========================================================
+   DROPDOWNS
+   ========================================================= */
+
+const from=document.getElementById("from");
+const to=document.getElementById("to");
+
+cities.forEach(city=>{
+
+  from.innerHTML+=
+  `<option value="${city}">${city}</option>`;
+
+  to.innerHTML+=
+  `<option value="${city}">${city}</option>`;
+
+});
+
+
+/* =========================================================
+   ROUTE CARDS
+   ========================================================= */
+
+const routeGrid=document.getElementById("routeGrid");
+
+routeGrid.innerHTML=popular.map(r=>`
+
+<button
+class="route"
+onclick="chooseRoute('${r[0].replace(/'/g,"\\'")}','${r[1].replace(/'/g,"\\'")}')"
+>
+
+<div class="icon">🚌</div>
+
+<b>${r[0]} → ${r[1]}</b>
+
+<small>Find buses →</small>
+
+</button>
+
+`).join("");
+
+
+/* =========================================================
+   DESTINATIONS
+   ========================================================= */
+
+const destinationGrid=
+document.getElementById("destinationGrid");
+
+destinationGrid.innerHTML=
+cities.map(city=>`
+
+<button
+class="destination"
+onclick="chooseDestination('${city.replace(/'/g,"\\'")}')"
+>
+📍 ${city}
+</button>
+
+`).join("");
+
+
+/* =========================================================
+   CHOOSE ROUTE
+   ========================================================= */
+
+function chooseRoute(a,b){
+
+  from.value=a;
+  to.value=b;
+
+  activeFilter="all";
+
+  document.querySelectorAll(".pill")
+  .forEach((x,i)=>{
+    x.classList.toggle("active",i===0);
+  });
+
+  render();
+
+  document.getElementById("buses")
+  .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+function chooseDestination(city){
+
+  from.value=city;
+  to.value="";
+
+  activeFilter="all";
+
+  render();
+
+  document.getElementById("buses")
+  .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+/* =========================================================
+   SWAP
+   ========================================================= */
+
+function swapRoute(){
+
+  const x=from.value;
+
+  from.value=to.value;
+  to.value=x;
+
+  render();
+
+}
+
+
+/* =========================================================
+   FILTER
+   ========================================================= */
+
+function filterType(type,button){
+
+  activeFilter=type;
+
+  document.querySelectorAll(".pill")
+  .forEach(x=>x.classList.remove("active"));
+
+  button.classList.add("active");
+
+  render();
+
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+function searchBuses(){
+
+  render();
+
+  document.getElementById("buses")
+  .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+document.getElementById("search")
+.addEventListener("input",render);
+
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+
+function render(){
+
+  const A=from.value;
+  const B=to.value;
+
+  const q=document.getElementById("search")
+  .value.toLowerCase()
+  .trim();
+
+
+  const results=buses.filter(x=>{
+
+    const name=x[0];
+    const a=x[1];
+    const b=x[2];
+    const type=x[3];
+    const cls=x[4];
+
+    const routeOK=
+      (!A || a===A) &&
+      (!B || b===B);
+
+    const textOK=
+      !q ||
+      (name+" "+a+" "+b)
+      .toLowerCase()
+      .includes(q);
+
+    const filterOK=
+      activeFilter==="all" ||
+      type===activeFilter ||
+      cls===activeFilter;
+
+    return routeOK && textOK && filterOK;
+
+  });
+
+
+  document.getElementById("result")
+  .textContent=
+  results.length+
+  " bus/service entries found";
+
+
+  const grid=document.getElementById("busGrid");
+
+
+  if(!results.length){
+
+    grid.innerHTML=`
+
+    <div class="bus" style="grid-column:1/-1;text-align:center;padding:55px">
+
+      <h2>🔎 No listed service found</h2>
+
+      <p style="color:#718285;margin-top:8px">
+        এই exact combination-এর জন্য database-এ
+        listed service নেই।
+      </p>
+
+    </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML=results.map(x=>{
+
+    const name=x[0];
+    const a=x[1];
+    const b=x[2];
+    const type=x[3];
+    const cls=x[4];
+
+    const site=websites[name];
+
+    const map=mapURL(a,b);
+
+    const ticket=ticketURL();
+
+    const fb=facebookURL(name);
+
+
+    return `
+
+    <article class="bus">
+
+      <div class="bushead">
+
+        <div>
+
+          <div class="busname">
+            ${name}
+            ${site?'<span class="verified">●</span>':''}
+          </div>
+
+          <div class="routeText">
+            ${a} → ${b}
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="tags">
+
+        <span class="tag">
+          ${type}
+        </span>
+
+        <span class="tag gold">
+          ${cls}
+        </span>
+
+        <span class="tag gray">
+          Intercity
+        </span>
+
+      </div>
+
+
+      <div class="info">
+
+        <div class="infobox">
+          <small>Departure</small>
+          <b>Check operator</b>
+        </div>
+
+        <div class="infobox">
+          <small>Fare</small>
+          <b>Check current fare</b>
+        </div>
+
+        <div class="infobox">
+          <small>Route</small>
+          <b>${a} → ${b}</b>
+        </div>
+
+      </div>
+
+
+      <div class="actions">
+
+        <a
+          href="${map}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🗺️ Map
+        </a>
+
+        <a
+          href="${site || ticket}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ${site?"🌐 Website":"🎫 Ticket"}
+        </a>
+
+        <a
+          href="${fb}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📘 FB
+        </a>
+
+        <a
+          href="${ticket}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🎫 Book
+        </a>
+
+        <a
+          href="${map}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📍 Route
+        </a>
+
+      </div>
+
+    </article>
+
+    `;
+
+  }).join("");
+
+}
+
+
+/* =========================================================
+   OPERATORS
+   ========================================================= */
+
+const operatorGrid=
+document.getElementById("opGrid");
+
+
+const operators=[
+  ...new Set(buses.map(x=>x[0]))
+].sort();
+
+
+operatorGrid.innerHTML=
+operators.map(name=>{
+
+  const total=
+  buses.filter(x=>x[0]===name).length;
+
+  const site=websites[name];
+
+  return `
+
+  <div class="op">
+
+    <h3>${name}</h3>
+
+    <p>
+      ${total} listed route entries
+    </p>
+
+    <a
+      href="${site || facebookURL(name)}"
+      target="_blank"
+      rel="noopener"
+    >
+      ${site?"🌐 Official Website":"📘 Find Facebook"}
+    </a>
+
+  </div>
+
+  `;
+
+}).join("");
+
+
+/* =========================================================
+   MAP GRID
+   ========================================================= */
+
+const mapGrid=
+document.getElementById("mapGrid");
+
+
+mapGrid.innerHTML=
+popular.map(r=>`
+
+<a
+class="maplink"
+href="${mapURL(r[0],r[1])}"
+target="_blank"
+rel="noopener noreferrer"
+>
+📍 ${r[0]} → ${r[1]}
+</a>
+
+`).join("");
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+document.getElementById("busCount")
+.textContent=buses.length+"+";
+
+
+document.getElementById("routeCount")
+.textContent=
+new Set(
+buses.map(x=>x[1]+"→"+x[2])
+).size+"+";
+
+
+document.getElementById("opCount")
+.textContent=operators.length+"+";
+
+
+/* INITIAL */
+render();
+
+</script>
+
+</body>
+</html>
